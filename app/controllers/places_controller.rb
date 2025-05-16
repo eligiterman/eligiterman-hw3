@@ -15,6 +15,10 @@ class PlacesController < ApplicationController
 
     # render entries/show view with all details about Place
   end
+
+  def new
+    # render view with new Places form
+  end
   
   def create
     #start with a new Place

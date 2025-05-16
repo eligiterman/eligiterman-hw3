@@ -1,17 +1,17 @@
 class EntriesController < ApplicationController
-
-  # def index
-  #   # find all the Entry rows
-  #   @entries = Entry.all
-  #   # render entries/index view    
-  # end
   
+  def new
+    @place = Place.find_by({"id" => params["place_id"]})
+    # render entries/new view with new Entry form
+  end
+
   def create
     # start with a new Entry
     @entry = Entry.new
 
     # assign user-entered form data to Entry's columns
-    @entry["occured_on"] = params["occured_on"]
+    @entry["title"] = params["title"]
+    @entry["occurred_on"] = params["occurred_on"]
     @entry["description"] = params["description"]
 
     # assign relationship between Entry and Place

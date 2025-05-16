@@ -2,20 +2,17 @@
 
 <h1><%= @place["name"] %></h1>
 
-<ul>
-  <% for entry in @entries %>
-    <li>
-      <a href="/entries/<%= entry["id"] %>">
-        <%= entry["title"] %>
-        <%= entry["occured_on"] %>
-        <%= entry["description"] %>
-      </a>
-    </li>
-  <% end %>
-</ul>
+<% for entry in @entries %>
+  <h3><%= entry["title"] %> | <%= entry["occurred_on"] %></h3>
+  <ul>
+    <li><p><%= entry["description"] %></p></li>
+  </ul>  
+<% end %>
 
 <p>
   <a href="/entries/new?place_id=<%= @place["id"] %>">New entry</a>
 </p>
 
-<p><a href="/places">Back to All Places</a></p>
+<p>
+  <a href="/places">Back to All Places</a>
+</p>
