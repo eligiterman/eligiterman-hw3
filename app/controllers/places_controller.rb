@@ -31,7 +31,7 @@ class PlacesController < ApplicationController
     @place.save
 
     # redirect user
-    redirect_to "/places"
+    redirect_to "/places/#{@place["id"]}"
   end
 
 end
